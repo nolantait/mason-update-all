@@ -9,7 +9,7 @@ local notification_options = {
 }
 
 local notifiers = {
-  messages.ERROR = function(message)
+  [messages.ERROR] = function(message)
     vim.notify(
       string.format(
         '[mason-update-all] Error during update: %s',
@@ -19,7 +19,7 @@ local notifiers = {
       notification_options
     )
   end,
-  messages.INFO = function(message)
+  [messages.INFO] = function(message)
     vim.notify(
       string.format(
         '[mason-update-all] %s',
